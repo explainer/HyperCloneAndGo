@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Valves</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Gpio pin</th>
+      <th>Cpu2bb color</th>
+      <th>Bb pin</th>
+      <th>Bb2relay color</th>
+      <th>Relay module</th>
+      <th>Relay index</th>
+      <th>Relay2valve color</th>
+      <th>Cmd</th>
+      <th>Base time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @valves.each do |valf| %>
+      <tr>
+        <td><%= valf.name %></td>
+        <td><%= valf.gpio_pin %></td>
+        <td><%= valf.cpu2bb_color %></td>
+        <td><%= valf.bb_pin %></td>
+        <td><%= valf.bb2relay_color %></td>
+        <td><%= valf.relay_module %></td>
+        <td><%= valf.relay_index %></td>
+        <td><%= valf.relay2valve_color %></td>
+        <td><%= valf.cmd %></td>
+        <td><%= valf.base_time %></td>
+        <td><%= link_to 'Show', valf %></td>
+        <td><%= link_to 'Edit', edit_valf_path(valf) %></td>
+        <td><%= link_to 'Destroy', valf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Valf', new_valf_path %>

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @valf.name %>
+</p>
+
+<p>
+  <strong>Gpio pin:</strong>
+  <%= @valf.gpio_pin %>
+</p>
+
+<p>
+  <strong>Cpu2bb color:</strong>
+  <%= @valf.cpu2bb_color %>
+</p>
+
+<p>
+  <strong>Bb pin:</strong>
+  <%= @valf.bb_pin %>
+</p>
+
+<p>
+  <strong>Bb2relay color:</strong>
+  <%= @valf.bb2relay_color %>
+</p>
+
+<p>
+  <strong>Relay module:</strong>
+  <%= @valf.relay_module %>
+</p>
+
+<p>
+  <strong>Relay index:</strong>
+  <%= @valf.relay_index %>
+</p>
+
+<p>
+  <strong>Relay2valve color:</strong>
+  <%= @valf.relay2valve_color %>
+</p>
+
+<p>
+  <strong>Cmd:</strong>
+  <%= @valf.cmd %>
+</p>
+
+<p>
+  <strong>Base time:</strong>
+  <%= @valf.base_time %>
+</p>
+
+<%= link_to 'Edit', edit_valf_path(@valf) %> |
+<%= link_to 'Back', valves_path %>

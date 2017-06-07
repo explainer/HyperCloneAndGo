@@ -1,0 +1,67 @@
+<%= form_with(model: valf, local: true) do |form| %>
+  <% if valf.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(valf.errors.count, "error") %> prohibited this valf from being saved:</h2>
+
+      <ul>
+      <% valf.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :valf_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gpio_pin %>
+    <%= form.number_field :gpio_pin, id: :valf_gpio_pin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpu2bb_color %>
+    <%= form.text_field :cpu2bb_color, id: :valf_cpu2bb_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bb_pin %>
+    <%= form.number_field :bb_pin, id: :valf_bb_pin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bb2relay_color %>
+    <%= form.text_field :bb2relay_color, id: :valf_bb2relay_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :relay_module %>
+    <%= form.number_field :relay_module, id: :valf_relay_module %>
+  </div>
+
+  <div class="field">
+    <%= form.label :relay_index %>
+    <%= form.number_field :relay_index, id: :valf_relay_index %>
+  </div>
+
+  <div class="field">
+    <%= form.label :relay2valve_color %>
+    <%= form.text_field :relay2valve_color, id: :valf_relay2valve_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cmd %>
+    <%= form.number_field :cmd, id: :valf_cmd %>
+  </div>
+
+  <div class="field">
+    <%= form.label :base_time %>
+    <%= form.datetime_select :base_time, id: :valf_base_time %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
