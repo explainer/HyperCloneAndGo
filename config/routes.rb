@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :water_managers
+  resources :sprinkles
+  resources :histories
   resources :valves
   mount Hyperloop::Engine => '/hyperloop'
   # root 'hyperloop#app' # route just the root to the component named App

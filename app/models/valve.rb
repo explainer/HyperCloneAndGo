@@ -1,2 +1,0 @@
-class Valve < ApplicationRecord
-end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @history.start_time %>
+</p>
+
+<p>
+  <strong>Stop time:</strong>
+  <%= @history.stop_time %>
+</p>
+
+<p>
+  <strong>Valve:</strong>
+  <%= @history.valve_id %>
+</p>
+
+<%= link_to 'Edit', edit_history_path(@history) %> |
+<%= link_to 'Back', histories_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Next start time:</strong>
+  <%= @sprinkle.next_start_time %>
+</p>
+
+<p>
+  <strong>Base start time:</strong>
+  <%= @sprinkle.base_start_time %>
+</p>
+
+<p>
+  <strong>Time input:</strong>
+  <%= @sprinkle.time_input %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @sprinkle.duration %>
+</p>
+
+<p>
+  <strong>Valve:</strong>
+  <%= @sprinkle.valve_id %>
+</p>
+
+<%= link_to 'Edit', edit_sprinkle_path(@sprinkle) %> |
+<%= link_to 'Back', sprinkles_path %>

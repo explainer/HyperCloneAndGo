@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607182731) do
+ActiveRecord::Schema.define(version: 20170608201230) do
+
+  create_table "histories", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "stop_time"
+    t.integer "valve_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "hyperloop_connections", force: :cascade do |t|
     t.string "channel"
@@ -23,6 +31,16 @@ ActiveRecord::Schema.define(version: 20170607182731) do
   create_table "hyperloop_queued_messages", force: :cascade do |t|
     t.text "data"
     t.integer "connection_id"
+  end
+
+  create_table "sprinkles", force: :cascade do |t|
+    t.datetime "next_start_time"
+    t.datetime "base_start_time"
+    t.string "time_input"
+    t.integer "duration"
+    t.integer "valve_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "todos", force: :cascade do |t|
@@ -44,6 +62,13 @@ ActiveRecord::Schema.define(version: 20170607182731) do
     t.string "relay2valve_color"
     t.integer "cmd"
     t.datetime "base_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "water_managers", force: :cascade do |t|
+    t.string "state"
+    t.string "http_host"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

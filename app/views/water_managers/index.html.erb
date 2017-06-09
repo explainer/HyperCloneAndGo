@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Water Managers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Http host</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @water_managers.each do |water_manager| %>
+      <tr>
+        <td><%= water_manager.state %></td>
+        <td><%= water_manager.http_host %></td>
+        <td><%= link_to 'Show', water_manager %></td>
+        <td><%= link_to 'Edit', edit_water_manager_path(water_manager) %></td>
+        <td><%= link_to 'Destroy', water_manager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Water Manager', new_water_manager_path %>

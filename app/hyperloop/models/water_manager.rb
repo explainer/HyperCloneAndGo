@@ -1,4 +1,3 @@
 require 'models/application_record'
-class Valve < ApplicationRecord
+class WaterManager < ApplicationRecord
 end
-

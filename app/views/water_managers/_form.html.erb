@@ -1,0 +1,27 @@
+<%= form_with(model: water_manager, local: true) do |form| %>
+  <% if water_manager.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(water_manager.errors.count, "error") %> prohibited this water_manager from being saved:</h2>
+
+      <ul>
+      <% water_manager.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state, id: :water_manager_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :http_host %>
+    <%= form.text_field :http_host, id: :water_manager_http_host %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

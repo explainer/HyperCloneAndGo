@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sprinkles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Next start time</th>
+      <th>Base start time</th>
+      <th>Time input</th>
+      <th>Duration</th>
+      <th>Valve</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sprinkles.each do |sprinkle| %>
+      <tr>
+        <td><%= sprinkle.next_start_time %></td>
+        <td><%= sprinkle.base_start_time %></td>
+        <td><%= sprinkle.time_input %></td>
+        <td><%= sprinkle.duration %></td>
+        <td><%= sprinkle.valve_id %></td>
+        <td><%= link_to 'Show', sprinkle %></td>
+        <td><%= link_to 'Edit', edit_sprinkle_path(sprinkle) %></td>
+        <td><%= link_to 'Destroy', sprinkle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sprinkle', new_sprinkle_path %>

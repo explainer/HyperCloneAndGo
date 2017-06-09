@@ -1,6 +1,11 @@
 # app/hyperloop/components/app.rb
 class App < Hyperloop::Component
-  render(DIV) do
-    "hello world!"
+  render(UL) do
+
+    H4 { "Aquarius Models" }
+    SystemState {}
+    ValveList {}
+    HistoryList {}
+    SprinkleList {}
   end
 end

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>State:</strong>
+  <%= @water_manager.state %>
+</p>
+
+<p>
+  <strong>Http host:</strong>
+  <%= @water_manager.http_host %>
+</p>
+
+<%= link_to 'Edit', edit_water_manager_path(@water_manager) %> |
+<%= link_to 'Back', water_managers_path %>
