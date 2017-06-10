@@ -4,7 +4,7 @@ class App < Hyperloop::Component
 
     H4 { "Aquarius Models" }
     SystemState {}
-    ValveList {}
+    ValveButtons {}
     HistoryList {}
     SprinkleList {}
   end
