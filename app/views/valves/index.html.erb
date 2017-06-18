@@ -20,21 +20,21 @@
   </thead>
 
   <tbody>
-    <% @valves.each do |valf| %>
+    <% @valves.each do |valve| %>
       <tr>
-        <td><%= valf.name %></td>
-        <td><%= valf.gpio_pin %></td>
-        <td><%= valf.cpu2bb_color %></td>
-        <td><%= valf.bb_pin %></td>
-        <td><%= valf.bb2relay_color %></td>
-        <td><%= valf.relay_module %></td>
-        <td><%= valf.relay_index %></td>
-        <td><%= valf.relay2valve_color %></td>
-        <td><%= valf.cmd %></td>
-        <td><%= valf.base_time %></td>
-        <td><%= link_to 'Show', valf %></td>
-        <td><%= link_to 'Edit', edit_valf_path(valf) %></td>
-        <td><%= link_to 'Destroy', valf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= valve.name %></td>
+        <td><%= valve.gpio_pin %></td>
+        <td><%= valve.cpu2bb_color %></td>
+        <td><%= valve.bb_pin %></td>
+        <td><%= valve.bb2relay_color %></td>
+        <td><%= valve.relay_module %></td>
+        <td><%= valve.relay_index %></td>
+        <td><%= valve.relay2valve_color %></td>
+        <td><%= valve.cmd %></td>
+        <td><%= valve.base_time %></td>
+        <td><%= link_to 'Show', valve %></td>
+        <td><%= link_to 'Edit', edit_valve_path(valve) %></td>
+        <td><%= link_to 'Destroy', valve, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Valf', new_valf_path %>
+<%= link_to 'New Valve', new_valve_path %>

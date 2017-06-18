@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sprinkle_events
   resources :water_managers
   resources :sprinkles
   resources :histories

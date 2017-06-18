@@ -1,1 +1,1 @@
-json.partial! "valves/valf", valf: @valf
+json.partial! "valves/valve", valve: @valve

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sprinkle:</strong>
+  <%= @sprinkle_event.sprinkle_id %>
+</p>
+
+<p>
+  <strong>Valve:</strong>
+  <%= @sprinkle_event.valve_id %>
+</p>
+
+<p>
+  <strong>History:</strong>
+  <%= @sprinkle_event.history_id %>
+</p>
+
+<p>
+  <strong>Valve cmd:</strong>
+  <%= @sprinkle_event.valve_cmd %>
+</p>
+
+<%= link_to 'Edit', edit_sprinkle_event_path(@sprinkle_event) %> |
+<%= link_to 'Back', sprinkle_events_path %>

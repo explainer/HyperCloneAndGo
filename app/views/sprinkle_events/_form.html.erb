@@ -1,0 +1,37 @@
+<%= form_with(model: sprinkle_event, local: true) do |form| %>
+  <% if sprinkle_event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sprinkle_event.errors.count, "error") %> prohibited this sprinkle_event from being saved:</h2>
+
+      <ul>
+      <% sprinkle_event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :sprinkle_id %>
+    <%= form.number_field :sprinkle_id, id: :sprinkle_event_sprinkle_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valve_id %>
+    <%= form.number_field :valve_id, id: :sprinkle_event_valve_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :history_id %>
+    <%= form.number_field :history_id, id: :sprinkle_event_history_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valve_cmd %>
+    <%= form.number_field :valve_cmd, id: :sprinkle_event_valve_cmd %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

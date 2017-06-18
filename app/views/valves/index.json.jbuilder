@@ -1,1 +1,1 @@
-json.array! @valves, partial: 'valves/valf', as: :valf
+json.array! @valves, partial: 'valves/valve', as: :valve

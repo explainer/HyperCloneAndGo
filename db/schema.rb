@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608201230) do
+ActiveRecord::Schema.define(version: 20170613154704) do
 
   create_table "histories", force: :cascade do |t|
     t.datetime "start_time"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20170608201230) do
   create_table "hyperloop_queued_messages", force: :cascade do |t|
     t.text "data"
     t.integer "connection_id"
+  end
+
+  create_table "sprinkle_events", force: :cascade do |t|
+    t.integer "sprinkle_id"
+    t.integer "valve_id"
+    t.integer "history_id"
+    t.integer "valve_cmd"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sprinkles", force: :cascade do |t|

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sprinkle Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sprinkle</th>
+      <th>Valve</th>
+      <th>History</th>
+      <th>Valve cmd</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sprinkle_events.each do |sprinkle_event| %>
+      <tr>
+        <td><%= sprinkle_event.sprinkle_id %></td>
+        <td><%= sprinkle_event.valve_id %></td>
+        <td><%= sprinkle_event.history_id %></td>
+        <td><%= sprinkle_event.valve_cmd %></td>
+        <td><%= link_to 'Show', sprinkle_event %></td>
+        <td><%= link_to 'Edit', edit_sprinkle_event_path(sprinkle_event) %></td>
+        <td><%= link_to 'Destroy', sprinkle_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sprinkle Event', new_sprinkle_event_path %>

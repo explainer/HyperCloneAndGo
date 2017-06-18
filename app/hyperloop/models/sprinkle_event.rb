@@ -1,5 +1,3 @@
 require 'models/application_record'
-class Valve < ApplicationRecord
-  
+class SprinkleEvent < ApplicationRecord
 end
-

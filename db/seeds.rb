@@ -21,6 +21,10 @@ deck   = Valve.create(name: 'Deck',   gpio_pin:12, bb_pin: 12, cpu2bb_color: 'br
 front  = Valve.create(name: 'Front',  gpio_pin:16, bb_pin: 18, cpu2bb_color: 'white-brown', relay_module: 1, relay_index: 3, cmd: 0, base_time: Time.now)
 tomato = Valve.create(name: 'Tomato', gpio_pin:18, bb_pin: 16, cpu2bb_color: 'orange',      relay_module: 1, relay_index: 2, cmd: 0, base_time: Time.now)
 
+# Create a SprinkleEvent for each Valve
+Valve.all.each do |valve|
+  SprinkleEvent.create(valve_id: valve.id, sprinkle_id: 0, history_id: 0, valve_cmd: 0)
+end
 # production sprinkle set; keep updated as watering needs evolve.
 hour = 7
 %w{ Sun Mon Tue Wed Thu Fri Sat }.each do |day|
@@ -32,6 +36,7 @@ hour = 7
     Sprinkle.create( time_input: "#{day} #{hour}:20 #{meridian}", duration:  5, valve_id: tomato.id)
   end
 end
+
 
 # testing sprinkle set; quick test of all 5 valves in 10 minutes
 ix = 2
