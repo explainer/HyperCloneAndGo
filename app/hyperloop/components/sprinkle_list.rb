@@ -7,30 +7,19 @@ class SprinkleList < Hyperloop::Component
     TABLE(class: 'table-bordered') do
       THEAD do
         TR do
-          TH do
-            "Time input"
-          end
-          TH do
-            "Duration"
-          end
-          TH do
-            "Valve ID"
-          end
+          TH { "Next Start Time" }          
+          TH { "Time input" }
+          TH { "Duration" }
+          TH { "Valve ID" }
         end
       end
       TBODY do
         Sprinkle.all.each do |sprinkle| 
           TR do
-            TD do
-              sprinkle.time_input
-            end
-            TD do
-              sprinkle.duration.to_s
-            end
-            TD do
-              sprinkle.valve_id.to_s
-              # Valve.find(sprinkle.valve_id).name
-            end
+            TD { sprinkle.next_start_time.strftime("%a %d %b %l:%M %P")}
+            TD { sprinkle.time_input }            
+            TD { sprinkle.duration.to_s }
+            TD { sprinkle.valve_id.to_s }
           end
         end
       end

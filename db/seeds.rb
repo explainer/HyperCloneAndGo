@@ -12,7 +12,7 @@ def seed_time(delay)
 end
 
 # create the top-level WaterManager.singleton
-WaterManager.create(state: 'Standby')
+WaterManager.create(state: 'Standby', http_host: "localhost:3000")
 #
 # rails g scaffold Valve name:string pin:integer --force
 atrium = Valve.create(name: 'Atrium', gpio_pin: 7, bb_pin: 27, cpu2bb_color: 'red',         relay_module: 2, relay_index: 1, cmd: 0, base_time: Time.now)
@@ -44,7 +44,7 @@ ix = 2
 
 2.times.each do
   Valve.all.each do |valve|
-    Sprinkle.create( time_input: seed_time(ix) , duration: 1, valve_id: valve.id )
+    Sprinkle.create(next_start_time: Time.now, time_input: seed_time(ix) , duration: 1, valve_id: valve.id )
     ix += 2
   end
 end

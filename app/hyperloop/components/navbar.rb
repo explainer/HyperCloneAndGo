@@ -24,22 +24,19 @@ class Navbar < Hyperloop::Component
   end
 
   def system_button
-    BUTTON(class: "btn #{system_button_state} navbar-btn") do #.on(:click) {state_button_toggled}
+    BUTTON(class: "btn #{system_button_state} navbar-btn") do 
       system_state
-    end
+    end.on(:click) {state_button_toggled}
   end
 
-  # def state_button_toggled
-  #   if WaterManager.first.state == "Active"
-  #     WaterManager.first.state = 'Standby'
-  #   else
-  #     WaterManager.first.state = "Active"
-  #   end
-  #   WaterManager.save
-  # end
+  def state_button_toggled
+    state_toggle = { 'Active': 'Standby', 'Standby': 'Active'}
+    toggled = state_toggle[WaterManager.first.state]
+    WaterManager.first.update(state: toggled)
+  end
 
   def system_button_state
-    state_class = {'Active': "btn-primary", 'Standby': 'btn-success'}
+    state_class = {'Active': "btn-warning", 'Standby': 'btn-info'}
     state_class[system_state]
   end
 
@@ -54,7 +51,13 @@ class Navbar < Hyperloop::Component
   def valve_button(valve)
     BUTTON(class: "btn #{valve_state(valve)} navbar-btn") do
       valve.name
-    end
+    end.on(:click) {valve_command_toggled(valve)}
+  end
+
+  def valve_command_toggled(valve)
+    valve_cmd_toggle = { '0': '1', '1': '0'}
+    new_cmd = valve_cmd_toggle[valve.cmd.to_s].to_i
+    valve.update(cmd: new_cmd)
   end
 
   def valve_state(valve)
